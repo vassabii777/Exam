@@ -1,0 +1,2 @@
+{"user": {"email": "vassabi@gmail.com", "username": "vassabik",
+ "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5YWJhMDI2LTRlM2YtNGUxNi04M2QwLWJmNmVjMGY4ZjU5NSIsImV4cCI6MTcyODIwMTg4Mn0.Bk9_Pz-FskVrZmevcFauK7CkFJktNosuXvcieFUgn-A"}}

@@ -1,0 +1,96 @@
+.authPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #3e3a36;
+    /* Темный фон для стимпанк атмосферы */
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #826a5c;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    width: 100%;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #e0c097;
+    /* Стимпанк цвет заголовков */
+    font-size: 28px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #826a5c;
+    padding-bottom: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid #826a5c;
+    border-radius: 10px;
+    background-color: #2e2b29;
+}
+
+.inputGroup {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #e0c097;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #826a5c;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #3e3a36;
+    /* Фон для полей ввода */
+    color: #e0c097;
+}
+
+input:focus {
+    border-color: #d4a373;
+    /* Цвет фокуса */
+    outline: none;
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.submitButton {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #826a5c;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+    background-color: #ab906d;
+}
+
+.toggleButton {
+    margin-top: 10px;
+    background: none;
+    border: none;
+    color: #d4a373;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.toggleButton:hover {
+    text-decoration: underline;
+}

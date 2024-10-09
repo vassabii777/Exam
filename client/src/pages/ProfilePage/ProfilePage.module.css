@@ -1,0 +1,99 @@
+.pageWrapper {
+    background-color: #2e2b29;
+    color: #e0c097;
+    font-family: 'Cinzel', serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 2px solid #826a5c;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.profilePage {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.header {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #826a5c;
+    margin-bottom: 20px;
+}
+
+.editForm {
+    background-color: #3e3a36;
+    border: 2px solid #826a5c;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.inputGroup {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.inputGroup label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.inputGroup input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #826a5c;
+    border-radius: 5px;
+}
+
+.saveButton {
+    background-color: #826a5c;
+    color: #2e2b29;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.saveButton:hover {
+    background-color: #ab906d;
+}
+
+.details {
+    background-color: #3e3a36;
+    border: 2px solid #826a5c;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.button {
+    background-color: #826a5c;
+    color: #e0c097;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ab906d;
+}
+
+.steampunkIcon {
+    margin-right: 5px;
+}
