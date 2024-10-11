@@ -1,4 +1,4 @@
-import { Navigate, Route } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import PrivateRoute from '../components/PrivateRoute';
 
 // Страници

@@ -1,26 +1,27 @@
-# Указываем базовый образ
-FROM node:18
+# Используем официальный образ Node.js
+FROM node:18 AS build
 
 # Устанавливаем рабочую директорию
 WORKDIR /app
 
-# Копируем package.json и yarn.lock для установки зависимостей
-COPY package.json yarn.lock ./
+# Копируем package.json и package-lock.json
+COPY package*.json ./
 
 # Устанавливаем зависимости
-RUN yarn install
+RUN npm install
 
-# Копируем остальные файлы приложения
+# Копируем остальные файлы
 COPY . .
 
-# Собираем React-приложение
-RUN yarn build
+# Собираем приложение
+RUN npm run build
 
-# Используем сервер для раздачи статических файлов (например, serve)
-RUN yarn global add serve
+# Запускаем сервер
+FROM node:18 AS production
+WORKDIR /app
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/package*.json ./
+RUN npm install --only=production
 
-# Порт для работы сервера
 EXPOSE 3000
-
-# Запускаем сервер для отображения скомпилированного приложения
-CMD ["serve", "-s", "build"]
+CMD ["npx", "serve", "dist"]

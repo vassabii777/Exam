@@ -21,10 +21,10 @@ export default function Header() {
             <nav className={style.nav}>
                 <ul>
                     <li>
-                        <Link to="/">Главная</Link> {/* Используем Link для навигации */}
+                        <Link to="/">Главная</Link>
                     </li>
                     <li>
-                        <Link to="/profile">Профиль</Link> {/* Используем Link для навигации */}
+                        <Link to="/profile">Профиль</Link>
                     </li>
                     <li>
                         <button
