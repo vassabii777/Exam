@@ -1,26 +1,33 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header/Header";
 import routes from "./routes/routes";
-import LoginPage from "./pages/AuthPage/AuthPage";
+import Layout from "./components/Layout/Layout";
+
+// Страницы
+import LoginPage from "./pages/AuthPage/LoginPage";
+import RegisterPage from "./pages/AuthPage/RegisterPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import HomePage from './pages/HomePage/HomePage';
-import Footer from "./components/Footer/Footer";
+import NotFoundPage from "./pages/404/NotFoundPage";
 
 function App() {
   return (
     <Router>
-      <Header />
-      <main>
+      <Layout>
         <Routes>
-          <Route path="/Auth" element={<LoginPage />} />
-          {/* <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/" element={<HomePage />} /> */}
+          {/* Статические маршруты */}
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/" element={<HomePage />} />
+
+          {/* Перенаправление на NotFoundPage */}
+          {/* <Route path="*" element={<NotFoundPage />} /> */}
+          {/* Динамические приватные маршруты */}
           {routes.map((route, index) => (
             <Route key={index} path={route.path} element={route.element} />
           ))}
         </Routes>
-      </main>
-      <Footer />
+      </Layout>
     </Router>
   );
 }

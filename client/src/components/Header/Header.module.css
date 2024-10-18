@@ -2,29 +2,72 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #3e3a36;
-    border-bottom: 2px solid #826a5c;
+    background-color: #4BB8A9;
+    padding: 10px 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: bold;
-    color: #e0c097;
 }
 
-.nav ul {
-    list-style: none;
+.nav {
     display: flex;
-    gap: 20px;
+    align-items: center;
 }
 
-.nav a {
+.navList {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navList li {
+    margin-right: 20px;
+}
+
+.navList a {
+    color: white;
     text-decoration: none;
-    color: #e0c097;
-    font-size: 18px;
+    font-size: 16px;
 }
 
-.nav a:hover {
-    color: #d4a373;
+.navList a:hover {
+    text-decoration: underline;
+}
+
+.profileSection {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.logoutButton {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.logoutButton i {
+    font-size: 18px;
 }

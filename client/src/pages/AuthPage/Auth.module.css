@@ -1,0 +1,120 @@
+.authPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #4BB8A9, #E5E5E5);
+    font-family: 'Arial', sans-serif;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.inputGroup {
+    margin-bottom: 20px;
+}
+
+.inputGroup label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #7A7A7A;
+}
+
+.inputGroup input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.inputGroup input:focus {
+    border-color: #4BB8A9;
+    outline: none;
+}
+
+.submitButton {
+    width: 100%;
+    padding: 12px;
+    background-color: #4BB8A9;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+    background-color: #3a9781;
+}
+
+.toggleButton {
+    background: none;
+    border: none;
+    color: #4BB8A9;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.toggleButton:hover {
+    text-decoration: underline;
+}
+
+.error {
+    color: #D9534F;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Стиль для страницы с приветствием (левая часть) */
+.welcomeSection {
+    background-color: #4BB8A9;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.welcomeSection h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.welcomeSection p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.welcomeSection .signInButton {
+    padding: 12px 24px;
+    background-color: white;
+    color: #4BB8A9;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.welcomeSection .signInButton:hover {
+    background-color: #f2f2f2;
+}

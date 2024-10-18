@@ -1,99 +1,82 @@
-.pageWrapper {
-    background-color: #2e2b29;
-    color: #e0c097;
-    font-family: 'Cinzel', serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    border: 2px solid #826a5c;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-}
+
 
 .profilePage {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Центрируем контент по вертикали */
+    padding: 40px;
 }
 
-.header {
-    font-size: 32px;
+.profileContent {
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profileHeader {
+    text-align: center;
     margin-bottom: 20px;
+}
+
+.profileHeader h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
 .avatar {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    border: 2px solid #826a5c;
     margin-bottom: 20px;
 }
 
-.editForm {
-    background-color: #3e3a36;
-    border: 2px solid #826a5c;
-    border-radius: 10px;
-    padding: 20px;
-    max-width: 400px;
-    margin: 0 auto;
+.details p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.button,
+.saveButton {
+    width: 100%;
+    padding: 12px;
+    background-color: #4BB8A9;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.button:hover,
+.saveButton:hover {
+    background-color: #3a9781;
 }
 
 .inputGroup {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     text-align: left;
 }
 
-.inputGroup label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.inputGroup input {
+input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #826a5c;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
+    margin-top: 8px;
 }
 
-.saveButton {
-    background-color: #826a5c;
-    color: #2e2b29;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+input:focus {
+    border-color: #4BB8A9;
+    outline: none;
 }
 
-.saveButton:hover {
-    background-color: #ab906d;
-}
-
-.details {
-    background-color: #3e3a36;
-    border: 2px solid #826a5c;
-    border-radius: 10px;
-    padding: 20px;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.button {
-    background-color: #826a5c;
-    color: #e0c097;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.button:hover {
-    background-color: #ab906d;
-}
-
-.steampunkIcon {
-    margin-right: 5px;
-}

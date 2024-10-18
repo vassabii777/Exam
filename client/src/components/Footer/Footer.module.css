@@ -1,7 +1,13 @@
 .footer {
-    text-align: end;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1a202c;
     padding: 20px;
-    background-color: #3e3a36;
-    border-top: 2px solid #826a5c;
-    color: #e0c097;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    border-top: 1px solid #2e2b29;
+    z-index: 1000;
 }
