@@ -10,7 +10,7 @@ export default function Footer() {
                     Your browser does not support the audio element.
                 </audio>
             </div>
-            <p>&copy; 2024 - Music. Все права защищены.</p>
+            <p>&copy; 2024 - Rhythmix. Все права защищены.</p>
         </footer>
     );
 }

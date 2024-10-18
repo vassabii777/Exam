@@ -25,15 +25,16 @@ function LoginPage() {
 
         try {
             const response = await axiosInstance.post("api/v1/users/login/", data);
-            const { token, email, username } = response.data;
+            const { token, email, username, avatar_urls } = response.data;
 
             localStorage.setItem("token", token);
-            localStorage.setItem("user", JSON.stringify({ email, username }));
+            localStorage.setItem("user", JSON.stringify({ email, username, avatarUrl }));
 
-            dispatch(setUser({ user: { email, username }, token }));
+            dispatch(setUser({ user: { email, username, avatar_urls }, token }));
             navigate("/");
 
             console.log("Аутентификация успешна", response.data);
+
         } catch (error) {
             const errorMessage = error.response?.data?.detail || error.message || "Ошибка аутентификации.";
             console.error("Ошибка:", errorMessage);

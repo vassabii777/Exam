@@ -8,7 +8,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 export default function Header() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const user = useSelector((state) => state.user.user); 
+    const user = useSelector((state) => state.user.user);
 
     const handleLogout = () => {
         dispatch(logout());
@@ -17,7 +17,7 @@ export default function Header() {
 
     return (
         <header className={style.header}>
-            <h1 className={style.logo}>Music</h1>
+            <h1 className={style.logo}>Rhythmix</h1>
             <nav className={style.nav}>
                 <ul className={style.navList}>
                     <li>
@@ -28,11 +28,11 @@ export default function Header() {
                     </li>
                     <li className={style.profileSection}>
                         <img
-                            // src={user.avatarUrl}
+                            // src={user.avatar_urls}
                             alt="Avatar"
                             className={style.avatar}
                         />
-                        <span className={style.username}>{user}</span>
+                        {/* <span className={style.username}>{user.username}</span> */}
                     </li>
                     <li>
                         <button

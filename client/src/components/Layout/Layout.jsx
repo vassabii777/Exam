@@ -6,7 +6,7 @@ import style from './Layout.module.css';
 
 function Layout({ children }) {
     const location = useLocation();
-    const hideHeaderOnPaths = ["/login", "/register", "*"];
+    const hideHeaderOnPaths = ["/login", "/register", "NotFoundPage"];
 
     const shouldHideHeader = hideHeaderOnPaths.includes(location.pathname);
 

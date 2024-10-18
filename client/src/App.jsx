@@ -7,7 +7,6 @@ import LoginPage from "./pages/AuthPage/LoginPage";
 import RegisterPage from "./pages/AuthPage/RegisterPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import HomePage from './pages/HomePage/HomePage';
-import NotFoundPage from "./pages/404/NotFoundPage";
 
 function App() {
   return (
@@ -20,8 +19,6 @@ function App() {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/" element={<HomePage />} />
 
-          {/* Перенаправление на NotFoundPage */}
-          {/* <Route path="*" element={<NotFoundPage />} /> */}
           {/* Динамические приватные маршруты */}
           {routes.map((route, index) => (
             <Route key={index} path={route.path} element={route.element} />

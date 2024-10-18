@@ -4,6 +4,7 @@ import PrivateRoute from '../components/PrivateRoute';
 // Страницы
 import HomePage from '../pages/HomePage/HomePage';
 import ProfilePage from '../pages/ProfilePage/ProfilePage';
+import NotFoundPage from '../pages/404/NotFoundPage';
 
 const routes = [
     {
@@ -24,7 +25,11 @@ const routes = [
     },
     {
         path: "*",
-        element: <Navigate to="/NotFoundPage" />,
+        element: (
+            <PrivateRoute>
+                <NotFoundPage />
+            </PrivateRoute>
+        )
     },
 ];
 
