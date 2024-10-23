@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import axiosInstance from "../../utils/axios";
 import { setUser } from "../../App/slices/userSlice";
+import Cookies from 'js-cookie';
+import axiosInstance from "../../utils/axios";
 import style from "./Auth.module.css";
 import InputField from "../../components/UI/InputField";
 
@@ -24,19 +25,20 @@ function LoginPage() {
         const data = { user: { email: formData.email, password: formData.password } };
 
         try {
-            const response = await axiosInstance.post("api/v1/users/login/", data);
+            const response = await axiosInstance.post("users/login/", data);
             const { token, email, username, avatar_urls } = response.data;
 
-            localStorage.setItem("token", token);
-            localStorage.setItem("user", JSON.stringify({ email, username, avatarUrl }));
+            Cookies.set("token", token, { expires: 7, secure: true, sameSite: 'Strict' });
 
-            dispatch(setUser({ user: { email, username, avatar_urls }, token }));
+            localStorage.setItem("user", JSON.stringify({ email, username, avatarUrl: avatar_urls }));
+
+            dispatch(setUser({ user: { email, username, avatar_urls } }));
             navigate("/");
 
             console.log("Аутентификация успешна", response.data);
 
         } catch (error) {
-            const errorMessage = error.response?.data?.detail || error.message || "Ошибка аутентификации.";
+            const errorMessage = error.response?.data?.detail || "Неправильные email или пароль.";
             console.error("Ошибка:", errorMessage);
             setError(errorMessage);
         }

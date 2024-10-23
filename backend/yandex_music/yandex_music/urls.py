@@ -19,5 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('authentication_.urls')),
-    path('', include('rest_framework_social_oauth2.urls')),
+    path('', include('rest_framework_social_oauth2.urls', namespace='drf')), 
+    path('', include('player.urls'))
 ]

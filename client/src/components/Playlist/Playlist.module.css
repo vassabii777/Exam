@@ -1,0 +1,28 @@
+.playlist {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.playlist ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.playlist li {
+    margin-bottom: 10px;
+}
+
+.playlist a {
+    text-decoration: none;
+    color: #337ab7;
+    transition: color 0.3s ease;
+}
+
+.playlist a:hover {
+    color: #23527c;
+}

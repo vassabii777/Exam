@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 from datetime import timedelta
 
+import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -31,6 +33,8 @@ AUTH_USER_MODEL = 'authentication_.User'
 
 # Application definition
 
+AUTH_USER_MODEL = 'authentication_.User'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -48,13 +53,20 @@ INSTALLED_APPS = [
     'oauth2_provider',
     'corsheaders',
     'social_django',
+
+
+    'player',
     'authentication_',
+
     'django_extensions',
     'rest_framework_social_oauth2',
 ]
 
-# CORS settings
-CORS_ALLOW_ALL_ORIGINS = True  # Set this to False and use CORS_ALLOWED_ORIGINS in production.
+
+CORS_ALLOW_ALL_ORIGINS = True  
+
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -116,10 +128,15 @@ WSGI_APPLICATION = 'yandex_music.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default' : {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'rhythmix_music',
+        'USER': 'postgres',
+        'PASSWORD': 'nezabudu',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
+ 
 }
 
 # Password validation
@@ -171,16 +188,30 @@ LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+
+DRFSO2_URL_NAMESPACE = 'drf'
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'avatars')
+
 # REST Framework settings
 REST_FRAMEWORK = {
     'EXCEPTION_HANDLER': 'yandex_music.exceptions.core_exception_handler',
     'NON_FIELD_ERRORS_KEY': 'error',
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
         'authentication_.backends.JWTAuthentication',
         'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
         'rest_framework_social_oauth2.authentication.SocialAuthentication',
+        'authentication_.backends.JWTAuthentication',
     ]
 }
 
@@ -190,3 +221,8 @@ SITE_ID = 1
 # CORS_ALLOWED_ORIGINS = [
 #     "http://192.168.65.1:3000",  # Add your frontend address here.
 # ]
+
+# ALLOWED_HOSTS = ['172.20.10.3', 'localhost']
+
+
+DEBUG = True

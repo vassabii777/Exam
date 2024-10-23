@@ -1,5 +1,8 @@
 from rest_framework.views import exception_handler
+from rest_framework.response import Response
+import logging
 
+logger = logging.getLogger(__name__)
 
 def core_exception_handler(exc, context):
     response = exception_handler(exc, context)
@@ -15,8 +18,15 @@ def core_exception_handler(exc, context):
 
 
 def _handle_generic_error(exc, context, response):
-    response.data = {
-        'errors': response.data
-    }
+    if response is not None and hasattr(response, 'data'):
+        logger.error(f"ValidationError: {response.data}")
+        response.data = {
+            'errors': response.data
+        }
+    else:
+        logger.error("Unknown error occurred.")
+        response = Response({
+            'errors': 'Unknown error occurred.'
+        }, status=500)
 
     return response

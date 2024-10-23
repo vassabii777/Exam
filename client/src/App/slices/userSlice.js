@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import Cookies from 'js-cookie';
 
 // Начальное состояние среза пользователя
 const initialState = {
@@ -17,7 +18,7 @@ const userSlice = createSlice({
         },
         // Выход из системы: очищает состояние пользователя и токена
         logout: (state) => {
-            localStorage.removeItem("token");
+            Cookies.remove('token');
             localStorage.removeItem("user");
             state.user = null;
             state.token = null;

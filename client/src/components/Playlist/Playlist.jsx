@@ -1,53 +1,68 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Api from '../../api/Api';
+import style from './Playlist.module.css';
 
-const style = {
-    playlist: {
-        padding: '20px',
-        border: '1px solid #ccc',
-        borderRadius: '5px',
-        marginBottom: '20px',
-        backgroundColor: '#f8f8f8'
-    },
-    list: {
-        listStyle: 'none',
-        padding: 0,
-        margin: 0
-    },
-    item: {
-        marginBottom: '10px'
-    },
-    link: {
-        textDecoration: 'none',
-        color: '#337ab7'
+export default function Playlist({ title, api, route }) {
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                let responseData;
+                switch (api) {
+                    case 'getAllArtists':
+                        responseData = await Api.getAllArtists();
+                        break;
+                    case 'getAllAlbums':
+                        responseData = await Api.getAllAlbums();
+                        break;
+                    case 'getAllTracks':
+                        responseData = await Api.getAllTracks();
+                        break;
+                    case 'getAllPlaylists':
+                        responseData = await Api.getAllPlaylists();
+                        break;
+                    default:
+                        throw new Error('Неизвестный API метод');
+                }
+                setData(responseData);
+            } catch (err) {
+                setError(err);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, [api]);
+
+    if (loading) {
+        return <p className={style.loading}>Загрузка...</p>;
     }
-}
 
-export default function Playlist() {
+    if (error) {
+        return <p className={style.error}>Ошибка при загрузке: {error.message}</p>;
+    }
+
     return (
-        <div style={style.playlist}>
-            <p>Плейлисты</p>
-            <ul style={style.list}>
-                <li style={style.item}>
-                    <Link style={style.link} to="/playlist/1">Playlist 1</Link>
-                </li>
-                <li style={style.item}>
-                    <Link style={style.link} to="/playlist/2">Playlist 2</Link>
-                </li>
-                <li style={style.item}>
-                    <Link style={style.link} to="/playlist/1">Playlist 1</Link>
-                </li>
-                <li style={style.item}>
-                    <Link style={style.link} to="/playlist/2">Playlist 2</Link>
-                </li>
-                <li style={style.item}>
-                    <Link style={style.link} to="/playlist/1">Playlist 1</Link>
-                </li>
-                <li style={style.item}>
-                    <Link style={style.link} to="/playlist/2">Playlist 2</Link>
-                </li>
-            </ul>
+        <div className={style.playlist}>
+            <h2 className={style.title}>{title}</h2>
+            {data.length > 0 ? (
+                <ul className={style.list}>
+                    {data.map((item) => (
+                        <li key={item.id} className={style.item}>
+                            <Link className={style.link} to={`/${route}/${item.id}`}>
+                                {item.title}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            ) : (
+                <p className={style.empty}>Нет доступных данных</p>
+            )}
         </div>
-    )
+    );
 }
-

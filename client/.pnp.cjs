@@ -39,6 +39,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-react-hooks", "virtual:8cf510823517aa5a10dcad8bad2ad307bab3a82f64687d7d353a0f90238fbce86bc81fb29805a79664798e493f5b13e158ed16880b4ea2d933b1250a99e62997#npm:5.1.0-rc-fb9a90fa48-20240614"],\
           ["eslint-plugin-react-refresh", "virtual:8cf510823517aa5a10dcad8bad2ad307bab3a82f64687d7d353a0f90238fbce86bc81fb29805a79664798e493f5b13e158ed16880b4ea2d933b1250a99e62997#npm:0.4.12"],\
           ["globals", "npm:15.11.0"],\
+          ["js-cookie", "npm:3.0.5"],\
           ["jwt-decode", "npm:4.0.0"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:8cf510823517aa5a10dcad8bad2ad307bab3a82f64687d7d353a0f90238fbce86bc81fb29805a79664798e493f5b13e158ed16880b4ea2d933b1250a99e62997#npm:18.3.1"],\
@@ -2183,6 +2184,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-react-hooks", "virtual:8cf510823517aa5a10dcad8bad2ad307bab3a82f64687d7d353a0f90238fbce86bc81fb29805a79664798e493f5b13e158ed16880b4ea2d933b1250a99e62997#npm:5.1.0-rc-fb9a90fa48-20240614"],\
           ["eslint-plugin-react-refresh", "virtual:8cf510823517aa5a10dcad8bad2ad307bab3a82f64687d7d353a0f90238fbce86bc81fb29805a79664798e493f5b13e158ed16880b4ea2d933b1250a99e62997#npm:0.4.12"],\
           ["globals", "npm:15.11.0"],\
+          ["js-cookie", "npm:3.0.5"],\
           ["jwt-decode", "npm:4.0.0"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:8cf510823517aa5a10dcad8bad2ad307bab3a82f64687d7d353a0f90238fbce86bc81fb29805a79664798e493f5b13e158ed16880b4ea2d933b1250a99e62997#npm:18.3.1"],\
@@ -2984,6 +2986,15 @@ const RAW_RUNTIME_STATE =
           ["jackspeak", "npm:3.4.3"],\
           ["@isaacs/cliui", "npm:8.0.2"],\
           ["@pkgjs/parseargs", "npm:0.11.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["js-cookie", [\
+      ["npm:3.0.5", {\
+        "packageLocation": "../../../.yarn/berry/cache/js-cookie-npm-3.0.5-8fc8fcc9b4-10c0.zip/node_modules/js-cookie/",\
+        "packageDependencies": [\
+          ["js-cookie", "npm:3.0.5"]\
         ],\
         "linkType": "HARD"\
       }]\
