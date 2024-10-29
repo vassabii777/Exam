@@ -61,7 +61,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     # использовать его для входы в систему, так как это наиболее
     # распространенная форма учетных данных на данный момент (ну еще телефон).
     email = models.EmailField(db_index=True, unique=True)
-    avatar = models.ImageField(upload_to='avatars', default='avatars/image.jpg')
+    avatar = models.ImageField(upload_to='avatars')
 
     # Когда пользователь более не желает пользоваться нашей системой, он может
     # захотеть удалить свой аккаунт. Для нас это проблема, так как собираемые

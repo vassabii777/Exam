@@ -1,11 +1,12 @@
 from rest_framework import generics
-from .models import Artist
-from .serializers import ArtistSerializer
-from services import import_artist_from_spotify
+from .models        import Artist
+from .serializers   import ArtistSerializer
+from services.services       import import_artist_from_spotify
 
 from rest_framework.response import Response
+from rest_framework.views    import APIView
 
-from rest_framework.views import APIView
+
 
 # ARTIST VIEWS
 class ArtistListCreateView(generics.ListCreateAPIView):

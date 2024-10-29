@@ -3,10 +3,13 @@ from rest_framework import generics
 from .models import Album
 from .serializers import AlbumSerializer
 
-from services import import_album_from_spotify
+from services.services import import_album_from_spotify
 from rest_framework.views import APIView
 
 from rest_framework.response import Response
+
+
+
 
 class AlbumListCreateView(generics.ListCreateAPIView):
     queryset = Album.objects.all()
@@ -26,6 +29,10 @@ class AlbumListCreateView(generics.ListCreateAPIView):
                     # Обновляем queryset с новым альбомом
                     return Album.objects.filter(title__icontains=album_name)
         return super().get_queryset()
+    
+
+
+
 
 
 class AlbumRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):

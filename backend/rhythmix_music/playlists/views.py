@@ -3,20 +3,19 @@ from .models import Playlist
 from .serializers import PlaylistSerializer, PlaylistCreateSerializer, PlaylistImportSerializer
 from rest_framework.permissions import IsAuthenticated
 
-from services import import_playlist_from_spotify
+from services.services  import import_playlist_from_spotify
 from rest_framework.response import Response
 from rest_framework import status
 
 from rest_framework.views import APIView
 
-# Playlist views
+
 class PlaylistListCreateView(generics.ListCreateAPIView):
     queryset = Playlist.objects.all()
     serializer_class = PlaylistSerializer
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        # Если запрос содержит параметр поиска, ищем плейлист по названию
         playlist_name = self.request.query_params.get('search')
         if playlist_name:
             # Пытаемся найти плейлист в базе данных
@@ -38,12 +37,10 @@ class PlaylistListCreateView(generics.ListCreateAPIView):
 
 
 
+
 class PlaylistRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Playlist.objects.all()
     serializer_class = PlaylistSerializer
-
-
-
 
 
 

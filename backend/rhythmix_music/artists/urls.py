@@ -3,6 +3,7 @@ from .views import ArtistListCreateView, ArtistRetrieveUpdateDestroyView, Spotif
 
 
 urlpatterns = [
+    
     path('artists/', ArtistListCreateView.as_view(), name='artist-list-create'),
     path('artists/<uuid:pk>/', ArtistRetrieveUpdateDestroyView.as_view(), name='artist-detail'),
     
