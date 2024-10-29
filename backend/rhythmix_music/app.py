@@ -23,7 +23,7 @@ def stream(filename):
     if not os.path.exists(file_path):
         return jsonify({"error": "File not found"}), 404
 
-    return Response(async_stream_audio(file_path), mimetype="audio/mpeg")
+    return Response(async_stream_audio(file_path), mimetype="audio/mpeg" )
 
 
 if __name__ == "__main__":
